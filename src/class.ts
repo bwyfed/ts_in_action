@@ -1,3 +1,4 @@
+/**
 class Dog {
   constructor(name: string) {
     this.name = name
@@ -42,3 +43,59 @@ class Husky1 extends Dog1 {
   }
 }
 console.log(Husky1.food) // 父类的静态成员也能被子类继承
+*/
+
+// 抽象类与多态
+
+abstract class Animal {
+  eat() {
+    console.log('eat')
+  }
+  // 抽象方法
+  abstract sleep(): void
+}
+
+class Dog extends Animal {
+  constructor(name: string) {
+    super()
+    this.name = name
+  }
+  name: string
+  run() {}
+  sleep() {
+    console.log('Dog sleep')
+  }
+}
+let dog = new Dog('wangwang')
+dog.eat()
+dog.sleep()
+
+class Cat extends Animal {
+  sleep() {
+    console.log('Cat sleep')
+  }
+}
+let cat = new Cat()
+// 多态
+let animals: Animal[] = [dog, cat]
+animals.forEach(i => {
+  i.sleep()
+})
+
+class WorkFlow {
+  step1() {
+    return this
+  }
+  step2() {
+    return this
+  }
+}
+// 链式调用
+new WorkFlow().step1().step2()
+
+class MyFlow extends WorkFlow {
+  next() {
+    return this
+  }
+}
+new MyFlow().next().step1().next().step2()
