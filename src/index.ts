@@ -1,6 +1,7 @@
 // import './datatype'
 // import './enum'
-import './interface'
+// import './interface'
+import './interface2'
 // import './class'
 
 let hello : string = 'Hello TypeScript'
