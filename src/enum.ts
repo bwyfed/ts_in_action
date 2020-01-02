@@ -12,30 +12,30 @@ console.log(Role) // 被编译为对象了
 // 字符串枚举
 enum Message {
   Success = '恭喜你，成功了',
-  fail = '抱歉，失败了'
+  Fail = '抱歉，失败了'
 }
 
-// 异构枚举
+// 异构枚举--数字枚举和字符串枚举混用
 enum Answer {
   N,
   Y = 'Yes'
 }
 
-// 枚举成员
+// 枚举成员是只读类型，不能修改
 // Role.Reporter = 2
-
+// 枚举成员的类型
 enum Char {
   // const
   a,
   b = Char.a,
   c = 1 + 3,
-  // computed
+  // computed--不会在编译阶段计算，会在运行时被计算
   d = Math.random(),
   e = '123'.length,
   f = 4
 }
 
-// 常量枚举
+// 常量枚举--会在编译阶段被移除
 const enum Month {
   Jan,
   Feb,
@@ -54,6 +54,7 @@ let f: F = 3
 // e === f // 报错
 let e1: E.a = 1
 let e2: E.b
+// e1 === e2 // 报错
 let e3: E.a = 1
 e1 === e3
 
