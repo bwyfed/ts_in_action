@@ -4,7 +4,8 @@
 // import './interface2'
 // import './function'
 // import './class'
-import './class-interface'
+// import './class-interface'
+import "./generic"
 
 let hello : string = 'Hello TypeScript'
 document.querySelectorAll('.app')[0].innerHTML = hello
